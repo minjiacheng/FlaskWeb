@@ -40,7 +40,7 @@ def uploaded_file(filename):
      ax.text(10, 250, 'Prediction: %s' % breed, color='k', backgroundcolor='g', alpha=0.8)
      ax.axis('off')
      output = io.BytesIO()
-     #fig.savefig(output)
+     fig.savefig(output)
      output.seek(0)
      if os.path.exists(img_path):
          os.remove(img_path) #delete user input if it exists
