@@ -3,7 +3,7 @@ The flask application package.
 """
 from flask import Flask
 from keras.applications import xception
-#from keras.applications import inception_v3
+from keras.applications import inception_v3
 import pickle
 
 #extract bottleneck
