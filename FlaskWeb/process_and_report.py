@@ -39,9 +39,8 @@ def uploaded_file(filename):
      breed = selected_breed_list[int(prediction)]
      ax.text(10, 250, 'Prediction: %s' % breed, color='k', backgroundcolor='g', alpha=0.8)
      ax.axis('off')
+     output = 0
      output = io.BytesIO()
      fig.savefig(output)
      output.seek(0)
-     if os.path.exists(img_path):
-         os.remove(img_path) #delete user input if it exists
      return send_file(output, mimetype='image/png')
