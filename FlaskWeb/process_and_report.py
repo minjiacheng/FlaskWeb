@@ -39,8 +39,7 @@ def uploaded_file(filename):
      breed = selected_breed_list[int(prediction)]
      ax.text(10, 250, 'Prediction: %s' % breed, color='k', backgroundcolor='g', alpha=0.8)
      ax.axis('off')
-     output = 0
-     output = io.BytesIO()
-     fig.savefig(output)
-     output.seek(0)
-     return send_file(output, mimetype='image/png')
+     output1 = io.BytesIO()
+     fig.savefig(output1)
+     output1.seek(0)
+     return send_file(output1, mimetype='image/png')
