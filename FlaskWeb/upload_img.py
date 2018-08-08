@@ -3,6 +3,7 @@ from flask import flash, request, redirect, url_for
 from werkzeug.utils import secure_filename
 from flask import render_template
 from os.path import join
+import os
 
 def allowed_file(filename):
     return '.' in filename and \
@@ -10,6 +11,15 @@ def allowed_file(filename):
 		   
 @app.route('/', methods=['GET', 'POST'])
 def upload_file():
+    #delete any existing files on the uploads folder
+    folder = app.config['UPLOAD_FOLDER']
+    for the_file in os.listdir(folder):
+        file_path = os.path.join(folder, the_file)
+        try:
+            if os.path.isfile(file_path):
+                os.unlink(file_path)
+        except Exception as e:
+            print(e)	
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
