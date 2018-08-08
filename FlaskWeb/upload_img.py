@@ -10,16 +10,7 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 		   
 @app.route('/', methods=['GET', 'POST'])
-def upload_file():
-    #delete any existing files on the uploads folder
-    folder = app.config['UPLOAD_FOLDER']
-    for the_file in os.listdir(folder):
-        file_path = os.path.join(folder, the_file)
-        try:
-            if os.path.isfile(file_path):
-                os.unlink(file_path)
-        except Exception as e:
-            print(e)	
+def upload_file():	
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
