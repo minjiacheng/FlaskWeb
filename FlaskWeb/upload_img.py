@@ -4,7 +4,7 @@ from werkzeug.utils import secure_filename
 from flask import render_template
 from os.path import join
 import os
-#import datetime
+import datetime
 
 def allowed_file(filename):
     return '.' in filename and \
