@@ -25,8 +25,8 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename):
             filename = secure_filename(file.filename)
-            time = '{date:%Y-%m-%d_%H:%M:%S_}'.format(date=datetime.datetime.now())
-            #filename = time + filename
+            time = '{date:%Y-%m-%d_%H-%M-%S_}'.format(date=datetime.datetime.now())
+            filename = time + filename
             file.save(join(app.config['UPLOAD_FOLDER'], filename)) #save user input
             return render_template('index.html', filename=filename) #display result in html
     return '''
