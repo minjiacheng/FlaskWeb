@@ -19,72 +19,66 @@ h1
 h2
 {
     color: #800000;
-    position: absolute;
-    left: 50px;
 }   
 /* Center the loader */
 #loader {
-position: absolute;
-left: 50%;
-top: 50%;
-z-index: 1;
-width: 150px;
-height: 150px;
-margin: -75px 0 0 -75px;
-border: 16px solid #f3f3f3;
-border-radius: 50%;
-border-top: 16px solid #3498db;
-width: 120px;
-height: 120px;
--webkit-animation: spin 2s linear infinite;
-animation: spin 2s linear infinite;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
 }
 
 @-webkit-keyframes spin {
-0% { -webkit-transform: rotate(0deg); }
-100% { -webkit-transform: rotate(360deg); }
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
 }
 
 @keyframes spin {
-0% { transform: rotate(0deg); }
-100% { transform: rotate(360deg); }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* Add animation to "page content" */
 .animate-bottom {
-position: relative;
--webkit-animation-name: animatebottom;
--webkit-animation-duration: 1s;
-animation-name: animatebottom;
-animation-duration: 1s
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
 }
 
 @-webkit-keyframes animatebottom {
-              from { bottom:-100px; opacity:0 } 
-              to { bottom:0px; opacity:1 }
-            }
+    from { bottom:-100px; opacity:0 } 
+    to { bottom:0px; opacity:1 }
+}
 
-            @keyframes animatebottom { 
-              from{ bottom:-100px; opacity:0 } 
-              to{ bottom:0; opacity:1 }
-            }
+@keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+}
 
-            #myDiv {
-              display: none;
-            }
-        </style>
-    </head>
-
-        <body onload="myFunction()" style="margin:0;">
-
+#myDiv {
+    display: none;
+}
+</style>
+    
+</head>
+<body onload="myFunction()" style="margin:0;">
 <div id="loader"></div>
-
 <div style="display:none;" id="myDiv" class="animate-bottom">
-        <h1>Hi, below is our prediction!</h1>
-
-            <img src="{{url_for('uploaded_file', filename=filename)}}" alt="Error loading image.">
-
-        <a href="/">Return</a>
+<h1>Hi, below is our prediction!</h1>
+<img src="{{url_for('uploaded_file', filename=filename)}}" alt="Error loading image.">
+<a href="/">Return</a>
         <h1>Why not try upload an image of yourself to see what breed you resemble?<br />
         <br />Here is a list of 120 different dog breeds we can predict.</h1>
         <h1>If our prediction is incorrect, please do check if the correct breed appears below.</h1>
@@ -218,10 +212,9 @@ function myFunction() {
 }
 
 function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("myDiv").style.display = "block";
+    document.getElementById("loader").style.display = "none";
+    document.getElementById("myDiv").style.display = "block";
 }
 </script>
-
-    </body>
+</body>
 </html>
