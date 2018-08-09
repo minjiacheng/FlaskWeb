@@ -32,6 +32,7 @@ def upload_file():
     return '''
     <!doctype html>
     <title>Upload new File</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <h1>Upload your dog picture to predict its breed</h1>
     <form method=post enctype=multipart/form-data>
       <input type=file name=file>
