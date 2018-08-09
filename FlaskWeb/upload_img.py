@@ -5,13 +5,16 @@ from flask import render_template
 from os.path import join
 import os
 import datetime
+from flask_dropzone import Dropzone
 
 def allowed_file(filename):
     return '.' in filename and \
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-		   
+
+dropzone = Dropzone(app)
+
 @app.route('/', methods=['GET', 'POST'])
-def upload_file():	
+def upload_file():		
     if request.method == 'POST':
         # check if the post request has the file part
         if 'file' not in request.files:
