@@ -24,3 +24,4 @@ six
 freetype-py
 pypng
 ipython
+datetime
