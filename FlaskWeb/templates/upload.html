@@ -1,5 +1,7 @@
 <html>
   <head>
+      {{ dropzone.load_css() }}
+      {{ dropzone.style('border: 2px dashed #0087F7; margin: 10%; min-height: 400px;') }}
       <title>Upload new File</title>
       <style type="text/css">
           html
@@ -36,5 +38,8 @@
       <input type=file name=file>
       <input type=submit value=Upload>
     </form>
-    </body>
+    {{ dropzone.create(action='upload_file') }}
+    {{ dropzone.load_js() }}
+    {{ dropzone.config() }}
+  </body>
 </html>
