@@ -11,7 +11,6 @@ matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from keras.preprocessing import image
 from keras.applications import xception
-#from keras.applications import inception_v3
 import pickle
 
 @app.route('/FlaskWeb/uploaded_file/<filename>')
@@ -28,9 +27,8 @@ def uploaded_file(filename):
      img_prep = xception.preprocess_input(np.expand_dims(img.copy(), axis=0))
      #make predictions
      imgX = xception_bottleneck.predict(img_prep, batch_size=32, verbose=1)
-     #imgI  = inception_bottleneck.predict(img_prep, batch_size=32, verbose=1)
-     #img_stack = np.hstack([imgX, imgI])
-     img_stack = np.hstack([imgX, imgX])#compromise due to unable to load both models at same time
+     img_stack = np.hstack([imgX, imgX])
+     #originally used an ensemble of inception & xception here but can only load one on Azure
      prediction = logreg.predict(img_stack)
      
      #plot image and prediction
