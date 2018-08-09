@@ -9,7 +9,6 @@ from flask_dropzone import Dropzone
 
 app.config.update(
     # Flask-Dropzone config:
-    DROPZONE_ALLOWED_FILE_TYPE='image',
     DROPZONE_MAX_FILES=1,
     DROPZONE_UPLOAD_ON_CLICK=True
 )
