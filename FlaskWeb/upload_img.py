@@ -29,13 +29,4 @@ def upload_file():
             filename = time + filename
             file.save(join(app.config['UPLOAD_FOLDER'], filename)) #save user input
             return render_template('index.html', filename=filename) #display result in html
-    return '''
-    <!doctype html>
-    <title>Upload new File</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <h1>Upload your dog picture to predict its breed</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
-    '''
+    return render_template('upload.html')
