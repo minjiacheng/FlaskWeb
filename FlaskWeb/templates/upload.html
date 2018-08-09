@@ -1,6 +1,10 @@
 <html>
+  <html lang="en">
   <head>
+      <meta charset="UTF-8">
       <title>Upload new File</title>
+      {{ dropzone.load_css() }}
+      {{ dropzone.style('border: 2px dashed #0087F7; margin: 10px 0 10px; min-height: 400px;') }}
       <style type="text/css">
           html
           {
@@ -31,10 +35,10 @@
   </head>
 
   <body>
-    <h1>Upload your dog picture to predict its breed</h1>
-    <form method=post enctype=multipart/form-data>
-      <input type=file name=file>
-      <input type=submit value=Upload>
-    </form>
+    {{ dropzone.create('/') }}
+    <button id="upload">Upload</button>
+
+    {{ dropzone.load_js() }}
+    {{ dropzone.config() }}
   </body>
 </html>
