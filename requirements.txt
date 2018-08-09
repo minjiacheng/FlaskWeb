@@ -24,4 +24,4 @@ six
 freetype-py
 pypng
 ipython
-datetime
+Flask-Dropzone
