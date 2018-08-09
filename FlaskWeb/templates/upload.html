@@ -34,9 +34,12 @@
 
   <body>
     <h1>Upload your dog picture to predict its breed</h1>
-      {{ dropzone.create('/') }}
-      <button id="upload_file">Upload</button>
-      {{ dropzone.load_js() }}
-      {{ dropzone.config() }}
+    <form method=post enctype=multipart/form-data>
+      <input type=file name=file>
+      {{ dropzone.create() }}
+      <input type=submit value=Upload>
+    </form>
+    {{ dropzone.load_js() }}
+    {{ dropzone.config() }}
   </body>
 </html>
