@@ -1,8 +1,35 @@
 <html>
   <head>
-    <title>Upload new File</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+      <title>Upload new File</title>
+      <style type="text/css">
+          html
+          {
+              color: #666;
+              font-family: Arial, Helvetica, Sans-Serif;   
+          }
+
+          body
+          {
+              background: #FAFAFA;   
+          }
+
+          h1
+          {
+              color: #660085;
+              text-align: center;
+          }
+
+          input[type="file"],
+          input[type="submit"]
+          {
+              display: block;
+              font-size: 1.6em;
+              margin: 12px auto;
+              width: 680px;
+          }
+      </style>
   </head>
+
   <body>
     <h1>Upload your dog picture to predict its breed</h1>
     <form method=post enctype=multipart/form-data>
