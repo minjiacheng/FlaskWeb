@@ -5,6 +5,16 @@ from flask import render_template
 from os.path import join
 import os
 import datetime
+from flask_dropzone import Dropzone
+
+app.config.update(
+    # Flask-Dropzone config:
+    DROPZONE_ALLOWED_FILE_TYPE='image',
+    DROPZONE_MAX_FILES=1,
+    DROPZONE_UPLOAD_ON_CLICK=True
+)
+
+dropzone = Dropzone(app)
 
 def allowed_file(filename):
     return '.' in filename and \
