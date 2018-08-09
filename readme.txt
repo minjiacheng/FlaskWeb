@@ -1,7 +1,3 @@
-Program based on https://github.com/Cojacfar/FlaskWeb by Cojacfar
-
-
-
 Visit https://flaskweb1234.azurewebsites.net/ to see the dog breed identifier in action.
 
 
@@ -43,7 +39,7 @@ To deploy this program on your Azure server,
   - restart your Azure app and you should be good to go!
 
 
-(See tutorial from Cojacfar above for a detailed guide.)
+(See tutorial at https://github.com/Cojacfar/FlaskWeb for a detailed guide.)
 
 
 
