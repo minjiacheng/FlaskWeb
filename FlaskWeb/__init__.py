@@ -22,4 +22,4 @@ app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 wsgi_app = app.wsgi_app #Registering with IIS
 
 import FlaskWeb.upload_img
-import FlaskWeb.process_and_report
+#import FlaskWeb.process_and_report
